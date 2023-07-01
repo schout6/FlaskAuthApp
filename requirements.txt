@@ -1,5 +1,5 @@
 pyodbc==4.0.32
-lask==2.0.1
+Flask==2.0.1
 SQLAlchemy==1.4.22
 Flask-SQLAlchemy==2.5.1
 Flask-Migrate==3.1.0
