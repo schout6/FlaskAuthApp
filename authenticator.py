@@ -1,14 +1,6 @@
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from models import User
-import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///instance/database.db')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 users = []
 
@@ -61,5 +53,4 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    connection_string = os.environ.get('DATABASE_CONNECTION_STRING')
     app.run(host='0.0.0.0', port=5000, debug=True)
